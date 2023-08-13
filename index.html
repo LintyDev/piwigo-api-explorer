@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="Make your own gallery page with Piwigo API" />
+  <meta name="author" content="Linty" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <title>Piwigo demo explore n°1</title>
+
+  <link rel="stylesheet" href="css/bootstrap-reboot.min.css" />
+  <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <main class="app">
+    <section class="banner">
+      <div class="container-md">
+        <h1><i>Explore</i> our <img src="assets/img/piwigo-logo.svg" alt="Icon" class="svg-logo"> demo Gallery</h1>
+        <p>
+          Utilizing the power of the Piwigo API, you have the capability to
+          craft a unique site like this, tailored to showcase your gallery in
+          its best light. This is just a glimpse into the vast array of
+          functionalities Piwigo brings to the table. Dive deeper and explore
+          more by visiting the API documentation
+          <a href="https://demo1.piwigo.com/tools/ws.htm">here</a>.
+        </p><br />
+        <p>
+          If you wish to create such a website for your photos, you can sign
+          up for a free 30 day trial account on piwigo.com or you can download
+          our technology for free from piwigo.org and host your own Piwigo.
+        </p>
+        <div class="banner-button">
+          <a class="btn-banner orange" href="https://piwigo.org/get-piwigo">Download now from piwigo.org</a>
+          <a class="btn-banner pink" href="https://piwigo.com/signup">Start free trial on piwigo.com</a>
+        </div>
+      </div>
+    </section>
+    <section class="search">
+      <div class="container-md">
+        <input id="search-bar" type="text" placeholder="Type something here..." />
+        <div id="tag-lists" class="tag-lists">
+          <!-- Tags Lists -->
+        </div>
+      </div>
+      <div class="search-content">
+        <div class="container">
+          <div class="container-search-content">
+            <div class="tag-container">
+              <div id="tag-lists-selected"class="tag-lists">
+                <!-- Tags Lists Selected -->
+              </div>
+              <div  class="filter-box">
+                <select class="select-filter">
+                  <option selected value="">Sort by</option>
+                  <option value="name">Name</option>
+                  <option value="hit">Hit</option>
+                  <option value="date_creation">Date creation</option>
+                  <option value="date_available">Date available</option>
+                </select>
+              </div>
+            </div>
+            <div id="container-search-content">
+              <h3> No Picture found ! </h3>
+            </div>
+            <ul class="items">
+              <!-- Search result -->
+            </ul>
+          </div>
+          <div id="pagination-type" data-value="" class="pagination">
+            <!-- Pagination -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+      <p>Piwigo - All of the photos in this demo are subject to the pixabay licence and pexels license. - Author : Linty
+        - Free to use
+      </p>
+    </section>
+  </main>
+  <script src="js/functions.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

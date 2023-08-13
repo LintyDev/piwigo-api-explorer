@@ -1,0 +1,75 @@
+/* Custom font */
+@font-face {
+    font-family: 'TASAExplorerVF';
+    src: url('../assets/font/TASAExplorerVF.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../assets/font/Helvetica.ttf') format('ttf');
+}
+/* CSS par défaut */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  color: #fff !important;
+  font-family: 'TASAExplorerVF', sans-serif !important;
+  margin: 0;
+  padding: 0;
+  display: flex;
+    flex-direction: column;
+   
+}
+.font-piwigo {
+  font-family: 'Helvetica', sans-serif !important;
+  font-weight: bold;
+  color: #3c3c3c;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+p,
+a,
+li,
+button,
+ul {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+input:focus textarea:focus,
+select:focus {
+  outline: none;
+}
