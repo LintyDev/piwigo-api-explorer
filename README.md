@@ -42,4 +42,4 @@ Contributions are what make the open-source community such an amazing place to l
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
-Linty - [@lintydotdev](https://twitter.com/your_twitter) 
+Linty - [@lintydev](https://twitter.com/lintydev) 
