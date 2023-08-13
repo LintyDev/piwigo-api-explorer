@@ -1,5 +1,5 @@
 # Piwigo API Explorer
-![Piwigo Logo](URL_TO_YOUR_LOGO_IMAGE)
+![Piwigo Logo](https://lintyserver.cloud/assets/img/piwigo-logo.svg)
 
 Explore the functionalities of the Piwigo API with this custom-built search page. Developed using HTML, CSS, and JavaScript (jQuery), this tool offers an intuitive interface for users to interact with and retrieve data from the Piwigo platform.
 
