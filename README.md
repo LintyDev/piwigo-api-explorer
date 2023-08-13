@@ -16,7 +16,7 @@ Explore the functionalities of the Piwigo API with this custom-built search page
 ### Installation
 1. Clone this repository:
 ```bash
-git clone [https://github.com/your_github_username/piwigo-api-explorer.git](https://github.com/LintyDev/piwigo-api-explorer)
+git clone (https://github.com/LintyDev/piwigo-api-explorer)
 ```
 
 2. Navigate to the project directory:
@@ -44,4 +44,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 Linty - [@lintydotdev](https://twitter.com/your_twitter) 
 
-[Project Link]([https://github.com/your_github_username/piwigo-api-explorer](https://github.com/LintyDev/piwigo-api-explorer)https://github.com/LintyDev/piwigo-api-explorer)
+[Project Link]((https://github.com/LintyDev/piwigo-api-explorer)https://github.com/LintyDev/piwigo-api-explorer)
