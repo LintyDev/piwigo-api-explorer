@@ -40,6 +40,9 @@ Contributions are what make the open-source community such an amazing place to l
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+## Screenshots
+![Screenshot of Piwigo API Explorer](https://i.postimg.cc/q7K8WXZn/Capture-d-e-cran-2023-08-15-a-21-57-12.png)
+
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
 
