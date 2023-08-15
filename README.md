@@ -17,14 +17,14 @@ Explore the functionalities of the Piwigo API with this custom-built search page
 ### Installation
 1. Create an `explore` directory in the root of your Piwigo installation.
 2. Clone this repository into the `explore` directory:
-'''bash
+```bash
 git clone https://github.com/LintyDev/piwigo-api-explorer ./explore
-'''
+```
 
 3. Navigate to the `explore` directory:
-'''bash
+```bash
 cd explore
-'''
+```
 
 4. Open the `index.html` file in your preferred browser.
 
