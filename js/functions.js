@@ -1,3 +1,9 @@
+function getUrlApi(){
+    let fullUrl = window.location.href;
+    let position = fullUrl.lastIndexOf('/explore'); // Mettre le nom du dossier où est situé l'index.html
+    let baseUrl = fullUrl.substring(0, position);
+    return baseUrl;
+}
 function displayPicture(data) {
     var itemsAppends = '';
     
@@ -65,28 +71,27 @@ function displayPagination(pages, page, typePag) {
     return itemsAppends;
 }
 function getData(query, currentPage, order) {
-    var apiUrl = "https://piwigo.lintyserver.cloud/getData";
+    var url = getUrlApi();
+    var apiUrl = url+"/ws.php?format=json";
     $.ajax({
         url: apiUrl,
-        type: "POST",
+        type: "GET",
         data: {
-            query,
-            currentPage,
-            order,
+            method: 'pwg.images.search',
+            query: query,
+            per_page: '16',
+            page: currentPage,
+            order: order
         },
-        success: function (data) {
+        success: function (response) {
             $("#container-search-content").hide();
             $(".items").hide().empty();
             $('.pagination').html('');
+            var data = JSON.parse(response);
             if (data.result && data.result.images.length > 0) {
                 var pagination = Math.ceil(data.result.paging.total_count / data.result.paging.per_page);
                 displayPagination(pagination, (currentPage + 1), 'query');
                 displayPicture(data.result.images);
-
-                // $.each(data.result.images, function (i, item) {
-                //     var itemsAppends = `<li class="item"><img src="${item.derivatives.small.url}"></li>`;
-                //     $(".items").append(itemsAppends).fadeIn(1000);
-                // });
             } else {
                 $("#container-search-content").show();
                 console.log("No picture found !");
@@ -103,7 +108,8 @@ function randomColorTags(tab) {
 }
 function getTags() {
     var tag = localStorage.getItem('tag');
-    var apiUrl = "https://piwigo.lintyserver.cloud/getTags";
+    var url = getUrlApi();
+    var apiUrl = url+"/ws.php?format=json";
     var color = ['blue', 'purple', 'pink', 'green', 'yellow', 'skyblue', 'red', 'lightgreen'];
     var tagsAppend = '';
     $('#tag-lists').html('');
@@ -111,7 +117,16 @@ function getTags() {
     $.ajax({
         url: apiUrl,
         type: "GET",
-        success: function (response) {
+        data: {
+            method: 'pwg.tags.getList',
+            sort_by_counter: 'true'
+        },
+        success: function (data) {
+            var response = JSON.parse(data);
+            var tagNumber = response.result.tags.length;
+            if(tag > tagNumber) {
+                tag = tagNumber;
+            }
             if (response.result) {
                 for (t = 1; t <= tag; t++) {
                     var tagColor = randomColorTags(color);
@@ -129,17 +144,21 @@ function getTags() {
     });
 }
 function searchByTag(tagId, currentPage, order) {
-    var apiUrl = "https://piwigo.lintyserver.cloud/getDataByTags";
+    var url = getUrlApi();
+    var apiUrl = url+"/ws.php?format=json";
 
     $.ajax({
         url: apiUrl,
-        type: "POST",
+        type: "GET",
         data: {
-            tagId,
-            currentPage,
-            order,
+            method: 'pwg.tags.getImages',
+            tag_id: tagId,
+            per_page: '16',
+            page: currentPage,
+            order: order,
         },
-        success: function (data) {
+        success: function (response) {
+            var data = JSON.parse(response);
             $("#container-search-content").hide();
             $(".items").hide().empty();
             $('.pagination').html('');

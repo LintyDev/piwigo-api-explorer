@@ -2,9 +2,9 @@ $(document).ready(function () {
     localStorage.setItem('tags', JSON.stringify([]));
     localStorage.setItem('tag', 20);
     var selectedSort = $(".select-filter").val();
-    var defaultSearch = "europe";
+    var defaultSearch = "e";
     var currentPage = 0;
-    let hasTyped = false;
+    getUrlApi();
 
     getData(defaultSearch, currentPage, selectedSort);
     getTags();
@@ -21,7 +21,7 @@ $(document).ready(function () {
         var selectedValue = $(this).val();
         var pagination = $('#pagination-type').data('value');
         if(pagination === 'query') {
-            var query = $('#search-bar').val() === '' ? 'europe' : $('#search-bar').val();
+            var query = $('#search-bar').val() === '' ? 'e' : $('#search-bar').val();
             getData(query, 0, selectedValue);
         } else if (pagination === 'tags') {
             var tab = JSON.parse(localStorage.getItem('tags'));
@@ -39,7 +39,7 @@ $(document).on('click', '.pag', function() {
     var page = $(this).data('value');
     var selectedSort = $(".select-filter").val();
     if(pagination === 'query') {
-        var query = $('#search-bar').val() === '' ? 'europe' : $('#search-bar').val();
+        var query = $('#search-bar').val() === '' ? 'e' : $('#search-bar').val();
         getData(query, page - 1, selectedSort);
     } else if (pagination === 'tags') {
         var tab = JSON.parse(localStorage.getItem('tags'));
@@ -68,13 +68,14 @@ $(document).on('click', '.tag', function() {
 
     localStorage.setItem('tags', JSON.stringify(tab));
     if(tabTagId.length === 0) {
-        getData('europe', 0, selectedSort);
+        getData('e', 0, selectedSort);
     } else {
         searchByTag(tabTagId, 0, selectedSort);
     }
 });
 $(document).on('click', '#mores-tags', function() {
     var tag = localStorage.getItem('tag');
+    localStorage.setItem('tags', JSON.stringify([]));
     localStorage.setItem('tag', Number(tag) + 5);
     getTags();
 });
