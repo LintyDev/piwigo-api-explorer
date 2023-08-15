@@ -12,19 +12,21 @@ Explore the functionalities of the Piwigo API with this custom-built search page
 
 ### Prerequisites
 - A modern web browser (e.g., Chrome, Firefox, Safari).
+- A Piwigo installation.
 
 ### Installation
-1. Clone this repository:
-```bash
-git clone https://github.com/LintyDev/piwigo-api-explorer
-```
+1. Create an `explore` directory in the root of your Piwigo installation.
+2. Clone this repository into the `explore` directory:
+'''bash
+git clone https://github.com/LintyDev/piwigo-api-explorer ./explore
+'''
 
-2. Navigate to the project directory:
-```bash
-cd piwigo-api-explorer
-```
+3. Navigate to the `explore` directory:
+'''bash
+cd explore
+'''
 
-3. Open the `index.html` file in your preferred browser.
+4. Open the `index.html` file in your preferred browser.
 
 ## Usage
 Simply use the search bar to enter your query and explore the results fetched from the Piwigo API.
